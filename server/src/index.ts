@@ -46,11 +46,17 @@ app.post("/api/sync", async (req, res) => {
       password
     });
 
-    const student =
-      client.user?.associatedParents?.[0]?.student ??
-      client.user?.student;
+    const student = (
+  client.user?.associatedParents?.[0]?.student ??
+        client.user?.student
+) as { id?: string } | undefined;
 
-    if (!student?.id) {
+if (!student?.id) {
+  return res.status(400).json({
+    error:
+      "Für diesen Account konnte kein zugehöriger Schüler gefunden werden."
+  });
+}
       return res.status(400).json({
         error:
           "Für diesen Account konnte kein zugehöriger Schüler gefunden werden."
