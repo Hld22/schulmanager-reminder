@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Schulmanager Reminder",
+    "slug": "schulmanager-reminder",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "schulmanager-reminder",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#ffffff"
+        }
+      ],
+      "expo-router"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "de.schulmanager.reminder",
+      "permissions": [
+        "NOTIFICATIONS"
+      ]
+    }
+  }
+}
